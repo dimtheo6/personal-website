@@ -1,14 +1,19 @@
 import { useState } from 'react'
 import Header from './Header'
 import Home from './Home'
+import About from './About'
+import Skills from './Skills'
+import Projects from './Projects'
 
 function App() {
 
   return (
-    <div className='container flex flex-col w-screen'>
+    <div className='container flex flex-col w-screen gap-14'>
       <Header/>
       <Home/>
-      <div className='h-screen w-screen'></div>
+      <About/>
+      <Skills/>
+      <Projects/>
     </div>
   )
 }

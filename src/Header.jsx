@@ -58,6 +58,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
 
   return (
     <header
@@ -135,12 +136,12 @@ export default function Header() {
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
 
-        <button className="relative group border-b-0">
+        <button className="relative group border-b-0" onClick={()=>document.getElementById('about').scrollIntoView({behavior:'smooth'})}>
           About
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
 
-        <button className="relative group border-b-0">
+        <button className="relative group border-b-0" onClick={()=>document.getElementById('skills').scrollIntoView({behavior:'smooth'})}>
           Skills{" "}
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
