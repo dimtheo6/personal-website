@@ -114,12 +114,12 @@ export default function Header() {
             </div>
           </div>
 
-          <button>
+          <a href="../public/CV_Resume.pdf" target="_blank">
             <FontAwesomeIcon
               icon={faFileArrowDown}
               className="hover:text-orange-400"
             />
-          </button>
+          </a>
         </div>
       </div>
 
