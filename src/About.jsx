@@ -2,17 +2,17 @@ export default function About() {
   return (
     <section
       id="about"
-      className="h-[calc(60vh-5rem)] w-screen  md:px-20 lg:px-40 2xl:px-96"
+      className="flex flex-col w-screen max-md:gap-5 max-md:px-10 md:px-20 lg:px-40 2xl:px-96"
     >
       <header className="flex  justify-between">
-        <div className="empty w-1/2"></div>
-        <div className="flex items-center w-1/2 gap-4">
-          <h1 className="text-2xl">About</h1>
-          <hr className={`flex-1 h-[2px] bg-black `}></hr>
+        <div className="empty md:w-1/2 max-md:w-0"></div>
+        <div className="flex items-center md:w-1/2 max-md:w-full gap-4">
+          <h1 className="text-2xl">About me</h1>
+          <hr className={`flex-1 h-[2px] bg-black  `}></hr>
         </div>
       </header>
-      <div className="about_container flex ">
-        <div className="flex w-1/2 justify-evenly items-center">
+      <div className="about_container flex  items-center max-md:flex-col ">
+        <div className="flex md:w-1/2 justify-evenly items-center">
           <img
             src="/profile.webp"
             alt="profile image"
@@ -20,7 +20,7 @@ export default function About() {
           />
         </div>
 
-        <p className="w-1/2 py-5 leading-7 text-lg">
+        <p className="md:w-1/2 py-5 leading-7 text-lg">
           Hello, I&apos;m Dimitris, a passionate and motivated software
           developer with a degree in informatics, specializing in advanced
           computer software. My journey in development began with a deep

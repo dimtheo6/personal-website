@@ -8,10 +8,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col justify-center gap-16 w-screen py-20 md:px-20 lg:px-40 2xl:px-60"
+      className="flex flex-col justify-center gap-16 w-screen max-md:py-5 max-md:px-10 py-20 md:px-20 lg:px-40 2xl:px-60"
     >
       <header className="flex justify-between">
-        <div className="flex items-center w-1/2 gap-4">
+        <div className="flex items-center w-1/2 max-md:w-full gap-4">
           <h1 className="text-2xl">Projects</h1>
           <hr className={`flex-1 h-[2px] bg-black`}></hr>
           <div className="empty w-auto"></div>
@@ -29,7 +29,7 @@ export default function Projects() {
             <div
               key={project.id}
               ref={ref}
-              className={`relative h-[350px] w-[400px] bg-gray-800 rounded-2xl transition-all duration-700 transform ${
+              className={`project relative h-[350px] w-[400px] max-md:h-[300px] max-md:w-[300px] dark:bg-gray-800 bg-gray-200 rounded-2xl transition-all duration-500 transform hover:scale-110 dark:shadow-none ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
               }`}
             >
@@ -41,23 +41,23 @@ export default function Projects() {
                 />
               </a>
 
-              <div className="project_info px-3 py-3">
+              <div className="project_info px-3 py-3 flex flex-col gap-3">
                 <div className="title flex justify-between">
-                  <h2>{project.name}</h2>
-                  <div className="icons flex gap-3">
+                  <h2 className="text-lg font-bold">{project.name}</h2>
+                  <div className="icons flex gap-3 text-xl">
                     <a
                       href={project.git}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FontAwesomeIcon icon={faGithub} />
+                      <FontAwesomeIcon icon={faGithub} className="cursor-pointer hover:text-orange-400"/>
                     </a>
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="cursor-pointer hover:text-orange-400" />
                     </a>
                   </div>
                 </div>

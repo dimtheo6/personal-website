@@ -8,7 +8,7 @@ import Projects from './Projects'
 function App() {
 
   return (
-    <div className='container flex flex-col w-screen gap-14'>
+    <div className='container flex flex-col  w-screen gap-14'>
       <Header/>
       <Home/>
       <About/>

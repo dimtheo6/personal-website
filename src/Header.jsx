@@ -4,6 +4,7 @@ import {
   faEnvelope,
   faFileArrowDown,
   faCopy,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -14,6 +15,20 @@ export default function Header() {
   const [dark, setDark] = useState(true);
   const [active, setActive] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+  const [openSide, setOpenSide] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const darkModeHandler = () => {
     setDark(!dark);
@@ -58,23 +73,20 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
 
-  return (
-    <header
-      id="header"
-      className={`flex justify-around items-center w-screen p-5 sticky top-0 h-20 text-black dark:text-white font-bold text-xl transition-colors duration-200 z-50 ${
-        scrolled ? "dark:bg-black bg-white" : ""
-      }`}
-    >
-      <div className="left flex gap-10 text-2xl ">
-        <button onClick={() => darkModeHandler()}>
+  function Left() {
+    return (
+      <div className={`left flex justify-center gap-10 text-2xl `}>
+        <button
+          onClick={() => darkModeHandler()}
+          className="max-md:fixed max-md:bottom-40"
+        >
           {dark && <FontAwesomeIcon icon={faMoon} />}
           {!dark && (
             <FontAwesomeIcon icon={faSun} className="text-yellow-500 " />
           )}
         </button>
-        <div className="links flex gap-5  ">
+        <div className="links flex gap-8 max-md:flex-col max-md:gap-3 ">
           <a
             href="https://github.com/dimtheo6"
             target="_blank"
@@ -93,7 +105,10 @@ export default function Header() {
           </a>
 
           <div className=" relative">
-            <button onClick={() => setActive(!active)}>
+            <button
+              onClick={() => setActive(!active)}
+              className="max-md:hidden"
+            >
               <FontAwesomeIcon
                 icon={faEnvelope}
                 className="hover:text-orange-400"
@@ -124,11 +139,16 @@ export default function Header() {
           </a>
         </div>
       </div>
+    );
+  }
 
-      <div className="right flex gap-5">
+  function Right() {
+    return (
+      <div className="right flex gap-8 max-md:flex-col">
         <button
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
+            setOpenSide(false);
           }}
           className="relative group border-b-0"
         >
@@ -136,21 +156,86 @@ export default function Header() {
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
 
-        <button className="relative group border-b-0" onClick={()=>document.getElementById('about').scrollIntoView({behavior:'smooth'})}>
+        <button
+          className="relative group border-b-0"
+          onClick={() => {
+            document
+              .getElementById("about")
+              .scrollIntoView({ behavior: "smooth" });
+            setOpenSide(false);
+          }}
+        >
           About
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
 
-        <button className="relative group border-b-0" onClick={()=>document.getElementById('skills').scrollIntoView({behavior:'smooth'})}>
+        <button
+          className="relative group border-b-0"
+          onClick={() => {
+            document
+              .getElementById("skills")
+              .scrollIntoView({ behavior: "smooth" });
+            setOpenSide(false);
+          }}
+        >
           Skills{" "}
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
 
-        <button className="relative group border-b-0">
+        <button
+          className="relative group border-b-0"
+          onClick={() => {
+            document
+              .getElementById("projects")
+              .scrollIntoView({ behavior: "smooth" });
+            setOpenSide(false);
+          }}
+        >
           Projects{" "}
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
       </div>
-    </header>
+    );
+  }
+
+  return (
+    <>
+      <header
+        id="header"
+        className={`flex justify-around items-center w-full p-5 fixed top-0 h-20 text-black dark:text-white font-bold text-xl transition-colors duration-200 z-50 ${
+          openSide && "z-40"
+        } ${scrolled && "dark:bg-black bg-white"}`}
+      >
+        {isMobile ? (
+          <>
+            <FontAwesomeIcon
+              icon={faBars}
+              className="absolute top-5 right-8 text-4xl"
+              onClick={() => setOpenSide(!openSide)}
+            />
+          </>
+        ) : (
+          <>
+            {" "}
+            <Left />
+            <Right />
+          </>
+        )}
+      </header>
+      <div
+        className={`overlay fixed h-full w-full bg-black ${
+          openSide ? "opacity-40" : "opacity-0"
+        } z-40`}
+        onClick={() => setOpenSide(false)}
+      ></div>
+      <div
+        className={`fixed flex flex-col gap-14 py-10 -translate-x-full h-full w-52 md:hidden bg-white dark:bg-primary z-50 ${
+          openSide ? "translate-x-0" : "-translate-x-full"
+        } transition-transform`}
+      >
+        <Right />
+        <Left />
+      </div>
+    </>
   );
 }

@@ -30,10 +30,10 @@ export default function Skills() {
 
   const card_styles = 'dark:bg-black bg-gray-200 rounded-xl flex flex-wrap  p-10 min-h-[350px] justify-center hover:scale-105 transition-all'
   return (
-    <section id="skills" className="flex flex-col justify-center gap-14 w-screen py-20 md:px-20 lg:px-40 2xl:px-60">
+    <section id="skills" className="flex flex-col justify-center gap-14 w-screen py-20 md:px-20 lg:px-40 2xl:px-60 max-md:px-10" >
       <header className="flex  justify-between">
         
-        <div className="flex items-center w-1/2 gap-4">
+        <div className="flex items-center max-md:w-full md:w-1/2 gap-4">
           <h1 className="text-2xl">Tools & Skills</h1>
           <hr className={`flex-1 h-[2px] bg-black `}></hr>
           <div className="empty w-auto"></div>
@@ -41,7 +41,7 @@ export default function Skills() {
       </header>
 
 
-    <div className="flex text-xl gap-48 justify-center">
+    <div className="flex text-xl gap-48 max-lg:gap-24 justify-center max-md:flex-col max-md:items-center max-md:gap-44">
 
       <div className="container w-64 h-64 flex flex-col text-center gap-5">
         <h1>Front-end</h1>
