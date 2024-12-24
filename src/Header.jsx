@@ -61,11 +61,12 @@ export default function Header() {
 
   return (
     <header
+      id="header"
       className={`flex justify-around items-center w-screen p-5 sticky top-0 h-20 text-black dark:text-white font-bold text-xl transition-colors duration-200 z-50 ${
         scrolled ? "dark:bg-black bg-white" : ""
       }`}
     >
-      <div className="left flex gap-10  ">
+      <div className="left flex gap-10 text-2xl ">
         <button onClick={() => darkModeHandler()}>
           {dark && <FontAwesomeIcon icon={faMoon} />}
           {!dark && (
@@ -114,7 +115,7 @@ export default function Header() {
             </div>
           </div>
 
-          <a href="../public/CV_Resume.pdf" target="_blank">
+          <a href="/CV_Resume.pdf" target="_blank">
             <FontAwesomeIcon
               icon={faFileArrowDown}
               className="hover:text-orange-400"

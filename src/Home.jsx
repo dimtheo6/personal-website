@@ -34,7 +34,7 @@ export default function Home(){
 
 
     return (
-        <section className="flex flex-col justify-center items-center h-[calc(100vh-5rem)] w-screen gap-10 text-center">
+        <section id="home" className="flex flex-col justify-center items-center h-[calc(100vh-5rem)] w-screen gap-10 text-center">
             <h1 className="font-bold text-7xl text-black dark:text-white ">Dimitris Theodosopoulos</h1>
             <div className="flex items-center justify-center  py-2 px-3 font-bold text-3xl rounded-lg bg-orange-600 text-white">{`> ${text}`}</div>
         </section>
