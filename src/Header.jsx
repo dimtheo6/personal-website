@@ -224,12 +224,12 @@ export default function Header() {
       </header>
       <div
         className={`overlay fixed h-full w-full bg-black ${
-          openSide ? "opacity-40" : "opacity-0"
+          openSide ? "opacity-40" : "hidden"
         } z-40`}
         onClick={() => setOpenSide(false)}
       ></div>
       <div
-        className={`fixed flex flex-col gap-14 py-10 -translate-x-full h-full w-52 md:hidden bg-white dark:bg-primary z-50 ${
+        className={`fixed flex flex-col gap-14 py-10 -translate-x-full h-full w-52 md:hidden duration-300 bg-white dark:bg-primary z-50 ${
           openSide ? "translate-x-0" : "-translate-x-full"
         } transition-transform`}
       >
