@@ -80,6 +80,7 @@ export default function Header() {
         <button
           onClick={() => darkModeHandler()}
           className="max-md:fixed max-md:bottom-40"
+          aria-label={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
           {dark && <FontAwesomeIcon icon={faMoon} />}
           {!dark && (
@@ -108,6 +109,7 @@ export default function Header() {
             <button
               onClick={() => setActive(!active)}
               className="max-md:hidden"
+              aria-label="show email"
             >
               <FontAwesomeIcon
                 icon={faEnvelope}
