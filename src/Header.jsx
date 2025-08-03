@@ -100,7 +100,7 @@ export default function Header() {
             href="https://www.linkedin.com/in/dimitris-theodosopoulos-1b4884327/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-orange-400"
+            className="hover:text-orange-400 "
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
@@ -117,7 +117,7 @@ export default function Header() {
               />
             </button>
             <div
-              className={`absolute flex items-center -bottom-12 left-1/2 -translate-x-1/2  gap-3 px-2 py-1 text-base bg-orange-600 rounded-lg transition-opacity duration-200 ${
+              className={`absolute flex items-center -bottom-12 left-1/2 -translate-x-1/2  gap-3 px-2 py-1 text-base bg-orange-600/85 rounded-lg transition-opacity duration-200  ${
                 active ? "opacity-1" : "hidden"
               }`}
             >
@@ -208,6 +208,8 @@ export default function Header() {
           openSide && "z-40"
         } ${scrolled && "dark:bg-black bg-white"}`}
       >
+        <div className={`${copySuccess? 'opacity-1 top-10': 'opacity-0 top-0'} transition-all duration-500 fixed rounded-lg py-3 px-5 z-50 bg-green-300/30 text-white backdrop-blur-md shadow-lg text-md font-large  `}>Copied to clipboard.</div>
+
         {isMobile ? (
           <>
             <FontAwesomeIcon
