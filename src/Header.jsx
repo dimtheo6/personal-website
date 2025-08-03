@@ -118,7 +118,7 @@ export default function Header() {
             </button>
             <div
               className={`absolute flex items-center -bottom-12 left-1/2 -translate-x-1/2  gap-3 px-2 py-1 text-base bg-orange-600 rounded-lg transition-opacity duration-200 ${
-                active ? "opacity-1" : "opacity-0"
+                active ? "opacity-1" : "hidden"
               }`}
             >
               <FontAwesomeIcon
@@ -136,7 +136,7 @@ export default function Header() {
           <a href="/theodosopoulos_resume.pdf" target="_blank">
             <FontAwesomeIcon
               icon={faFileArrowDown}
-              className="hover:text-orange-400"
+              className="hover:text-orange-400 "
             />
           </a>
         </div>
