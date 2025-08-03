@@ -22,8 +22,8 @@ export default function About() {
 
         <p className="md:w-1/2 py-5 leading-7 text-lg">
           Hello, I&apos;m Dimitris, a passionate and motivated software
-          developer with a degree in informatics, specializing in advanced
-          computer software. My journey in development began with a deep
+          developer with a degree in informatics, specializing in front-end web development.
+          My journey in development began with a deep
           fascination for technology and problem-solving, which led me to focus
           on front-end web development.
           <br />
