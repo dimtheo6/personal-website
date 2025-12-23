@@ -29,7 +29,7 @@ export default function Projects() {
             <div
               key={project.id}
               ref={ref}
-              className={`project relative h-[350px] w-[400px] max-md:h-[300px] max-md:w-[300px] dark:bg-gray-800 bg-gray-200 rounded-2xl transition-all duration-500 transform hover:scale-110 dark:shadow-none ${
+              className={`project relative h-[350px] w-[400px] max-md:h-[450px] max-md:w-[400px] dark:bg-gray-800 bg-gray-200 rounded-2xl transition-all duration-500 transform hover:scale-110 dark:shadow-none ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
               }`}
             >
