@@ -21,18 +21,17 @@ export default function About() {
         </div>
 
         <p className="md:w-1/2 py-5 leading-7 text-lg">
-          Hello, I&apos;m Dimitris, a passionate and motivated software
-          developer with a degree in informatics, specializing in front-end web development.
-          My journey in development began with a deep
-          fascination for technology and problem-solving, which led me to focus
-          on front-end web development.
+          Hi, I&apos;m Dimitris — a front-end developer based in Greece, working
+          mainly with React, Next.js, and TypeScript. I currently work in IT
+          support, where I spend my days solving problems for real users —
+          experience I bring directly into how I think about front-end work.
           <br />
           <br />
-          With experience in building dynamic and responsive web applications, I
-          thrive on creating intuitive user experiences and scalable solutions.
-          My academic background provided me with a strong foundation in
-          software development principles, which I apply daily to build clean,
-          efficient, and modern code.
+          Outside of that, I build full-featured projects like an e-commerce app
+          with Stripe payments, Firebase authentication, and an admin dashboard,
+          and a game-browsing app built on a public API. I'm looking for my
+          first role as a front-end developer, where I can keep building things
+          people actually use.
         </p>
       </div>
 
